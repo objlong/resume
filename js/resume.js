@@ -28,10 +28,10 @@
                         }
                     ]
                 };
-                var Home = React.createClass({
+                var PageOne = React.createClass({
                     render: function() {
                         return (
-                            <div className="home">
+                            <div className="page-1">
                                 <Ps ps={this.props.data.ps} />
                                 <Item item={this.props.data.item} />
                             </div>
@@ -93,12 +93,50 @@
                     }
                 });
                 ReactDOM.render(
-                  <Home data={data} />,
+                  <PageOne data={data} />,
                   document.getElementById('main-wrap-1')
+                );
+            }
+        },
+        ps_info: {
+            init: function () {
+                var PageOne = React.createClass({
+                    render: function() {
+                        return (
+                            <div className="page-2">
+                                <Nav />
+                            </div>
+                        );
+                    }
+                });
+                var Nav = React.createClass({
+                    render: function () {
+                        return (
+                            <div>
+                                <div className="navTitle">
+                                    descripe
+                                </div>
+                                <div className="navBar">
+                                    <div className="navBar-cir">
+                                    </div>
+                                    <div className="navBar-1">
+                                    </div>
+                                    <div className="navBar-2">
+                                    </div>
+                                    <div className="navBar-1">
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                });
+                ReactDOM.render(
+                  <PageOne />,
+                  document.getElementById('main-wrap-2')
                 );
             }
         }
     };
-    controller.home.init();
+    controller.ps_info.init();
 }) ()
 
