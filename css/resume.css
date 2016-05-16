@@ -26,8 +26,11 @@ body{background-color: #A2E2C7;}
 .page-1 .all > div:nth-child(3){left: 2rem;bottom: 6rem;}
 .page-1 .all > div:nth-child(4){right: 2rem;bottom: 6rem;}
 
+.page-2 .allNav{margin-left: 1rem;}
 .page-2 .navBar{position: relative;padding-top: .6rem;height: 2.6rem;}
-.page-2 .navTitle{color: #fff;}
+.page-2 .navTitle{color: #fff;font-size: 2rem;padding-left: 3rem;}
 .page-2 .navBar .navBar-cir{width: 3rem;height: 3rem;position: absolute;left: 0;top: 0;border-radius: 50%;background-color: #fff;border:.1rem solid #A2E2C7;}
 .page-2 .navBar .navBar-1{background-color: #fff;height: .6rem;margin-left: 1.5rem;width: 80%;}
 .page-2 .navBar .navBar-2{background-color: #fff;height: .4rem;margin:.3rem 0;margin-left: 1.5rem;width: 70%;}
+.page-2 .option-1{width: 50%;font-size: 1.6rem;line-height: 2.6rem;float: left;}
+.page-2 .option-1 span:nth-child(1){padding-left: 1.5rem;}

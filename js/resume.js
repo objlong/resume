@@ -1,4 +1,22 @@
-(function () {    
+(function () {
+// 公用组件   
+    var Item = React.createClass({
+        render: function () {
+            var one = this.props.item;
+            var all = one.map(function (a) {
+                return (
+                    <div className="item" key={a.id}>
+                        {a.select}
+                    </div>       
+                );
+            });
+            return (
+                <div className="all">
+                    {all}
+                </div>
+            );                            
+        }
+    }); 
     var controller = {
         home: {
             init: function () {
@@ -74,23 +92,6 @@
                             <div className="post">{this.props.post}</div>
                         )
                     }
-                })
-                var Item = React.createClass({
-                    render: function () {
-                        var one = this.props.item;
-                        var all = one.map(function (a) {
-                            return (
-                                <div className="item" key={a.id}>
-                                    {a.select}
-                                </div>       
-                            );
-                        });
-                        return (
-                            <div className="all">
-                                {all}
-                            </div>
-                        );                            
-                    }
                 });
                 ReactDOM.render(
                   <PageOne data={data} />,
@@ -105,6 +106,12 @@
                         return (
                             <div className="page-2">
                                 <Nav />
+                                <Option />
+                                <Option />
+                                <Option />
+                                <Option />
+                                <Option />
+                                <Option />
                             </div>
                         );
                     }
@@ -112,9 +119,9 @@
                 var Nav = React.createClass({
                     render: function () {
                         return (
-                            <div>
+                            <div className="allNav">
                                 <div className="navTitle">
-                                    descripe
+                                    基本信息
                                 </div>
                                 <div className="navBar">
                                     <div className="navBar-cir">
@@ -126,6 +133,16 @@
                                     <div className="navBar-1">
                                     </div>
                                 </div>
+                            </div>
+                        )
+                    }
+                });
+                var Option = React.createClass({
+                    render: function () {
+                        return (
+                            <div className="option-1">
+                            <span>姓名:</span>
+                            <span>于常龙</span>
                             </div>
                         )
                     }
