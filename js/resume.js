@@ -45,7 +45,6 @@
                 		}
                 	},
                 	handleNextPage: function(i) {
-                		alert(i)
                 		this.setState({
                 			class: 'item-2',
 		                    item: [
