@@ -2,19 +2,11 @@
 // 公用组件   
     var Item = React.createClass({
         render: function () {
-            var one = this.props.item;
-            var all = one.map(function (a) {
-                return (
-                    <div className="item" key={a.id}>
-                        {a.select}
-                    </div>       
-                );
-            });
             return (
-                <div className="all">
-                    {all}
-                </div>
-            );                            
+                <div className={this.props.cl} onClick={this.props.click}>
+                    {this.props.select}
+                </div>       
+            );                    
         }
     }); 
     var controller = {
@@ -23,35 +15,69 @@
                 var data = {
                     ps: {
                         img: "imgs/1.jpg",
-                        name: "于常龙",
-                        birth: "1991/1/17",
-                        post: "前端工程师"
-                    },
-                    item: [
-                        {
-                            id: 1,
-                            select: "个人简介"
-                        },
-                        {
-                            id: 2,
-                            select: "工作经验"
-                        },
-                        {
-                            id: 3,
-                            select: "掌握技能"
-                        },
-                        {
-                            id: 4,
-                            select: "自我定位"
-                        }
-                    ]
+                        name: "XXX",
+                        birth: "XXX",
+                        post: "XXXXX"
+                    }
                 };
                 var PageOne = React.createClass({
+                	getInitialState: function() {
+                		return {
+                			class: 'item-1',
+		                    item: [
+		                        {
+		                            id: 1,
+		                            select: "模块1"
+		                        },
+		                        {
+		                            id: 2,
+		                            select: "模块2"
+		                        },
+		                        {
+		                            id: 3,
+		                            select: "模块3"
+		                        },
+		                        {
+		                            id: 4,
+		                            select: "模块4"
+		                        }
+		                    ]
+                		}
+                	},
+                	handleNextPage: function(i) {
+                		alert(i)
+                		this.setState({
+                			class: 'item-2',
+		                    item: [
+		                        {
+		                            id: 0,
+		                            select: "模块0"
+		                        },
+		                        {
+		                            id: 2,
+		                            select: "模块2"
+		                        },
+		                        {
+		                            id: 3,
+		                            select: "模块3"
+		                        },
+		                        {
+		                            id: 4,
+		                            select: "模块4"
+		                        }
+		                    ]
+                		})
+                	},
                     render: function() {
+                    	var items = this.state.item.map(function(every, i) {
+                    		return <Item cl={this.state.class} select={every.select} key={every.id} click={this.handleNextPage.bind(this, i)} />;
+                    	}.bind(this));
                         return (
                             <div className="page-1">
                                 <Ps ps={this.props.data.ps} />
-                                <Item item={this.props.data.item} />
+                                <div className='all'>
+                                    {items}
+                                </div>
                             </div>
                         );
                     }
@@ -154,6 +180,6 @@
             }
         }
     };
-    controller.ps_info.init();
+    controller.home.init();
 }) ()
 

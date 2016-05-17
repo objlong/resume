@@ -20,11 +20,11 @@ body{background-color: #A2E2C7;}
 .page-1 .ps .desc span{font-size: 1.6rem;line-height: 2.6rem;}
 .page-1 .ps .desc span:nth-child(1){padding-right: 1rem;}
 .page-1 .ps .post{font-size: 2rem;line-height: 2.6rem;text-align: center;color: #444444;font-weight: bold;}
-.page-1 .all .item{cursor:pointer;position: absolute;width: 8rem;height: 8rem;border-radius: 4rem;background-color: #fff;line-height: 8rem;text-align: center;font-size: 1.6rem;}
-.page-1 .all > div:nth-child(1){left: 2rem;top: 6rem;}
-.page-1 .all > div:nth-child(2){right: 2rem;top: 6rem;}
-.page-1 .all > div:nth-child(3){left: 2rem;bottom: 6rem;}
-.page-1 .all > div:nth-child(4){right: 2rem;bottom: 6rem;}
+.page-1 .all .item-1{cursor:pointer;position: absolute;width: 8rem;height: 8rem;border-radius: 4rem;background-color: #fff;line-height: 8rem;text-align: center;font-size: 1.6rem;}
+.page-1 .all .item-1:nth-child(1){left: 2rem;top: 6rem;}
+.page-1 .all .item-1:nth-child(2){right: 2rem;top: 6rem;}
+.page-1 .all .item-1:nth-child(3){left: 2rem;bottom: 6rem;}
+.page-1 .all .item-1:nth-child(4){right: 2rem;bottom: 6rem;}
 
 .page-2 .allNav{margin-left: 1rem;}
 .page-2 .navBar{position: relative;padding-top: .6rem;height: 2.6rem;}
