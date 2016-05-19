@@ -1,15 +1,15 @@
 var view = (function () {
 // menu   
-    var Item = React.createClass({
+    var Item = React.createClass({displayName: "Item",
         render: function () {
             return (
-                <div className={'item ' + this.props.cl} onClick={this.props.click} data-id={this.props.every.id}>
-                    {this.props.every.select}
-                </div>       
+                React.createElement("div", {className: 'item ' + this.props.cl, onClick: this.props.click, "data-id": this.props.every.id}, 
+                    this.props.every.select
+                )       
             );                    
         }
     }); 
-    var Menu = React.createClass({
+    var Menu = React.createClass({displayName: "Menu",
         getInitialState: function() {
             return {
                 class: 'item-1',
@@ -91,17 +91,17 @@ var view = (function () {
         },
         render: function() {
             var items = this.state.item.map(function(every, i) {
-                return <Item cl={this.state.class} every={every} key={every.id} click={this.handleNextPage.bind(this, i)} />;
+                return React.createElement(Item, {cl: this.state.class, every: every, key: every.id, click: this.handleNextPage.bind(this, i)});
             }.bind(this));
             return (
-                <div className='all'>
-                    {items}
-                </div>
+                React.createElement("div", {className: "all"}, 
+                    items
+                )
             );
         }        
     });
     ReactDOM.render(
-      <Menu />,
+      React.createElement(Menu, null),
       document.getElementById('menu')
     );
     var view = {
@@ -115,156 +115,156 @@ var view = (function () {
                         post: "XXXXX"
                     }
                 };
-                var PageZero = React.createClass({
+                var PageZero = React.createClass({displayName: "PageZero",
                     render: function() {
                         return (
-                            <div className="page-0">
-                                <Ps ps={this.props.data.ps} />
-                            </div>
+                            React.createElement("div", {className: "page-0"}, 
+                                React.createElement(Ps, {ps: this.props.data.ps})
+                            )
                         );
                     }
                 });
-                var Ps = React.createClass({
+                var Ps = React.createClass({displayName: "Ps",
                     render: function () {
                         return (
-                            <div className="ps">
-                                <Portrait img={this.props.ps.img} />
-                                <Desc name={this.props.ps.name} birth={this.props.ps.birth} />
-                                <Post post={this.props.ps.post}/>
-                            </div>
+                            React.createElement("div", {className: "ps"}, 
+                                React.createElement(Portrait, {img: this.props.ps.img}), 
+                                React.createElement(Desc, {name: this.props.ps.name, birth: this.props.ps.birth}), 
+                                React.createElement(Post, {post: this.props.ps.post})
+                            )
                         )
                     }
                 });
-                var Portrait = React.createClass({
+                var Portrait = React.createClass({displayName: "Portrait",
                     render: function () {
                         return (
-                            <div className="portrait">
-                                <img src={this.props.img} />
-                            </div>
+                            React.createElement("div", {className: "portrait"}, 
+                                React.createElement("img", {src: this.props.img})
+                            )
                         );
                     }
                 });
-                var Desc = React.createClass({
+                var Desc = React.createClass({displayName: "Desc",
                     render: function() {
                         return (
-                            <div className="desc">
-                                <span>{this.props.name}</span>
-                                <span>{this.props.birth}</span>
-                            </div>
+                            React.createElement("div", {className: "desc"}, 
+                                React.createElement("span", null, this.props.name), 
+                                React.createElement("span", null, this.props.birth)
+                            )
                         );
                     }
                 });
-                var Post = React.createClass({
+                var Post = React.createClass({displayName: "Post",
                     render: function () {
                         return (
-                            <div className="post">{this.props.post}</div>
+                            React.createElement("div", {className: "post"}, this.props.post)
                         )
                     }
                 });
                 ReactDOM.render(
-                  <PageZero data={data} />,
-                  document.getElementById('main-wrap')
+                  React.createElement(PageZero, {data: data}),
+                  document.getElementById('main-wrap-0')
                 );
             }
         },
         page_one: {
             render: function () {
-                var PageOne = React.createClass({
+                var PageOne = React.createClass({displayName: "PageOne",
                     render: function() {
                         return (
-                            <div className="page-1">
-                                <Nav />
-                                <Option />
-                                <Option />
-                                <Option />
-                                <Option />
-                                <Option />
-                                <Option />
-                            </div>
+                            React.createElement("div", {className: "page-1"}, 
+                                React.createElement(Nav, null), 
+                                React.createElement(Option, null), 
+                                React.createElement(Option, null), 
+                                React.createElement(Option, null), 
+                                React.createElement(Option, null), 
+                                React.createElement(Option, null), 
+                                React.createElement(Option, null)
+                            )
                         );
                     }
                 });
-                var Nav = React.createClass({
+                var Nav = React.createClass({displayName: "Nav",
                     render: function () {
                         return (
-                            <div className="allNav">
-                                <div className="navTitle">
-                                    基本特性
-                                </div>
-                                <div className="navBar">
-                                    <div className="navBar-cir">
-                                    </div>
-                                    <div className="navBar-1">
-                                    </div>
-                                    <div className="navBar-2">
-                                    </div>
-                                    <div className="navBar-1">
-                                    </div>
-                                </div>
-                            </div>
+                            React.createElement("div", {className: "allNav"}, 
+                                React.createElement("div", {className: "navTitle"}, 
+                                    "基本特性"
+                                ), 
+                                React.createElement("div", {className: "navBar"}, 
+                                    React.createElement("div", {className: "navBar-cir"}
+                                    ), 
+                                    React.createElement("div", {className: "navBar-1"}
+                                    ), 
+                                    React.createElement("div", {className: "navBar-2"}
+                                    ), 
+                                    React.createElement("div", {className: "navBar-1"}
+                                    )
+                                )
+                            )
                         )
                     }
                 });
-                var Option = React.createClass({
+                var Option = React.createClass({displayName: "Option",
                     render: function () {
                         return (
-                            <div className="option-1">
-                            <span>特性:</span>
-                            <span>A+</span>
-                            </div>
+                            React.createElement("div", {className: "option-1"}, 
+                            React.createElement("span", null, "特性:"), 
+                            React.createElement("span", null, "A+")
+                            )
                         )
                     }
                 });
                 ReactDOM.render(
-                  <PageOne />,
-                  document.getElementById('main-wrap')
+                  React.createElement(PageOne, null),
+                  document.getElementById('main-wrap-1')
                 );
             }
         },
         page_two: {
         	render: function () {
-        		var PageTwo = React.createClass({
+        		var PageTwo = React.createClass({displayName: "PageTwo",
         			render: function () {
         				return (
-        					<div className="page-2">
-        					</div>
+        					React.createElement("div", {className: "page-2"}
+        					)
         				);
         			}
         		});
         		ReactDOM.render(
-        			<PageTwo />,
-        			document.getElementById('main-wrap')
+        			React.createElement(PageTwo, null),
+        			document.getElementById('main-wrap-2')
         		);
         	}
         },
         page_three: {
         	render: function () {
-        		var PageThree = React.createClass({
+        		var PageThree = React.createClass({displayName: "PageThree",
         			render: function () {
         				return (
-        					<div className="page-3">
-        					</div>
+        					React.createElement("div", {className: "page-3"}
+        					)
         				);
         			}
         		});
         		ReactDOM.render(
-        			<PageThree />,
+        			React.createElement(PageThree, null),
         			document.getElementById('main-wrap')
         		);
         	}
         },
         page_four: {
         	render: function () {
-        		var PageFour = React.createClass({
+        		var PageFour = React.createClass({displayName: "PageFour",
         			render: function () {
         				return (
-        					<div className="page-4">
-        					</div>
+        					React.createElement("div", {className: "page-4"}
+        					)
         				);
         			}
         		});
         		ReactDOM.render(
-        			<PageFour />,
+        			React.createElement(PageFour, null),
         			document.getElementById('main-wrap')
         		);
         	}
