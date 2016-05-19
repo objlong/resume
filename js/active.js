@@ -1,31 +1,21 @@
 var controller = {
 	init: function () {
 		view.home.render();
+		view.page_one.render();
+		view.page_two.render();
+		view.page_three.render();
+		view.page_four.render();
 	},
-	pageBreak: function (n, fn) {
-		$('#main-wrap > div').fadeOut(function(){
-			fn && fn();
-		});
+	pageBreak: function (self) {
+		var n = self.data('id');
+		$('.item').removeClass('active');
+		self.addClass('active');
+		$('.main-wrap').hide();
+		$('#main-wrap-' + n).fadeIn();
 	}
 };
 controller.init();
 $(document).on('click', '.item', function () {
-	var n = $(this).data('id');
-	switch (n) {
-		case 0:
-			controller.pageBreak(n, view.home.render);
-			break;
-		case 1:		
-			controller.pageBreak(n, view.page_one.render);
-			break;
-		case 2:
-			controller.pageBreak(n, view.page_two.render);
-			break;
-		case 3:
-			controller.pageBreak(n, view.page_three.render);
-			break;
-		case 4:
-			controller.pageBreak(n, view.page_four.render);
-			break;
-	}
+	var self = $(this);
+	controller.pageBreak(self);
 })

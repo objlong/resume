@@ -163,33 +163,94 @@ var view = (function () {
                 });
                 ReactDOM.render(
                   <PageZero data={data} />,
-                  document.getElementById('main-wrap')
+                  document.getElementById('main-wrap-0')
                 );
             }
         },
         page_one: {
             render: function () {
-                var PageOne = React.createClass({
-                    render: function() {
-                        return (
-                            <div className="page-1">
-                                <Nav />
-                                <Option />
-                                <Option />
-                                <Option />
-                                <Option />
-                                <Option />
-                                <Option />
-                            </div>
-                        );
-                    }
-                });
+            	var data ={
+            		list:[
+            			{
+            				key: 1,
+            				title: '基本特性',
+            				info: [
+            					{
+            						key: 1,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 2,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 3,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 4,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 5,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 6,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 7,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 8,
+            						caption: 'name',
+            						content: 'xxx'
+            					}
+            				]
+            			},
+            			{
+            				key: 2,
+            				title: '基本特性',
+            				info: [
+            					{
+            						key: 1,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 2,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 3,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 4,
+            						caption: 'name',
+            						content: 'xxx'
+            					}
+            				]
+            			}
+            		]
+            	};
                 var Nav = React.createClass({
                     render: function () {
                         return (
                             <div className="allNav">
                                 <div className="navTitle">
-                                    基本特性
+                                    {this.props.title}
                                 </div>
                                 <div className="navBar">
                                     <div className="navBar-cir">
@@ -209,15 +270,51 @@ var view = (function () {
                     render: function () {
                         return (
                             <div className="option-1">
-                            <span>特性:</span>
-                            <span>A+</span>
+                            <span>{this.props.option.caption}</span>
+                            <span>{this.props.option.content}</span>
                             </div>
                         )
                     }
                 });
+                var AllOptions = React.createClass({
+                	render: function () {
+                		var options = this.props.info.map(function (option) {
+                			return <Option option={option} key={option.key}/>;
+                		});
+                		return (
+                			<div className="all-options">
+                				{options}
+                			</div>
+                		);
+                	}
+                });
+                var Box = React.createClass({
+                	render: function () {
+                		return (
+                			<div>
+                				<Nav title={this.props.one.title} />
+                				<AllOptions info={this.props.one.info} />
+                			</div>
+                		);
+                		
+
+                	}
+                });
+                var PageOne = React.createClass({
+                    render: function() {
+                    	var boxes = this.props.data.list.map(function (every) {
+                    		return <Box one={every} key={every.key} />;
+                    	});
+                        return (
+                            <div className="page-1">
+                                {boxes}
+                            </div>
+                        );
+                    }
+                });
                 ReactDOM.render(
-                  <PageOne />,
-                  document.getElementById('main-wrap')
+                  <PageOne data={data} />,
+                  document.getElementById('main-wrap-1')
                 );
             }
         },
@@ -233,7 +330,7 @@ var view = (function () {
         		});
         		ReactDOM.render(
         			<PageTwo />,
-        			document.getElementById('main-wrap')
+        			document.getElementById('main-wrap-2')
         		);
         	}
         },
@@ -249,7 +346,7 @@ var view = (function () {
         		});
         		ReactDOM.render(
         			<PageThree />,
-        			document.getElementById('main-wrap')
+        			document.getElementById('main-wrap-3')
         		);
         	}
         },
@@ -265,7 +362,7 @@ var view = (function () {
         		});
         		ReactDOM.render(
         			<PageFour />,
-        			document.getElementById('main-wrap')
+        			document.getElementById('main-wrap-4')
         		);
         	}
         },

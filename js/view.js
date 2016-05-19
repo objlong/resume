@@ -163,33 +163,94 @@ var view = (function () {
                 });
                 ReactDOM.render(
                   React.createElement(PageZero, {data: data}),
-                  document.getElementById('main-wrap')
+                  document.getElementById('main-wrap-0')
                 );
             }
         },
         page_one: {
             render: function () {
-                var PageOne = React.createClass({displayName: "PageOne",
-                    render: function() {
-                        return (
-                            React.createElement("div", {className: "page-1"}, 
-                                React.createElement(Nav, null), 
-                                React.createElement(Option, null), 
-                                React.createElement(Option, null), 
-                                React.createElement(Option, null), 
-                                React.createElement(Option, null), 
-                                React.createElement(Option, null), 
-                                React.createElement(Option, null)
-                            )
-                        );
-                    }
-                });
+            	var data ={
+            		list:[
+            			{
+            				key: 1,
+            				title: '基本特性',
+            				info: [
+            					{
+            						key: 1,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 2,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 3,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 4,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 5,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 6,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 7,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 8,
+            						caption: 'name',
+            						content: 'xxx'
+            					}
+            				]
+            			},
+            			{
+            				key: 2,
+            				title: '基本特性',
+            				info: [
+            					{
+            						key: 1,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 2,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 3,
+            						caption: 'name',
+            						content: 'xxx'
+            					},
+            					{
+            						key: 4,
+            						caption: 'name',
+            						content: 'xxx'
+            					}
+            				]
+            			}
+            		]
+            	};
                 var Nav = React.createClass({displayName: "Nav",
                     render: function () {
                         return (
                             React.createElement("div", {className: "allNav"}, 
                                 React.createElement("div", {className: "navTitle"}, 
-                                    "基本特性"
+                                    this.props.title
                                 ), 
                                 React.createElement("div", {className: "navBar"}, 
                                     React.createElement("div", {className: "navBar-cir"}
@@ -209,15 +270,51 @@ var view = (function () {
                     render: function () {
                         return (
                             React.createElement("div", {className: "option-1"}, 
-                            React.createElement("span", null, "特性:"), 
-                            React.createElement("span", null, "A+")
+                            React.createElement("span", null, this.props.option.caption), 
+                            React.createElement("span", null, this.props.option.content)
                             )
                         )
                     }
                 });
+                var AllOptions = React.createClass({displayName: "AllOptions",
+                	render: function () {
+                		var options = this.props.info.map(function (option) {
+                			return React.createElement(Option, {option: option, key: option.key});
+                		});
+                		return (
+                			React.createElement("div", {className: "all-options"}, 
+                				options
+                			)
+                		);
+                	}
+                });
+                var Box = React.createClass({displayName: "Box",
+                	render: function () {
+                		return (
+                			React.createElement("div", null, 
+                				React.createElement(Nav, {title: this.props.one.title}), 
+                				React.createElement(AllOptions, {info: this.props.one.info})
+                			)
+                		);
+                		
+
+                	}
+                });
+                var PageOne = React.createClass({displayName: "PageOne",
+                    render: function() {
+                    	var boxes = this.props.data.list.map(function (every) {
+                    		return React.createElement(Box, {one: every, key: every.key});
+                    	});
+                        return (
+                            React.createElement("div", {className: "page-1"}, 
+                                boxes
+                            )
+                        );
+                    }
+                });
                 ReactDOM.render(
-                  React.createElement(PageOne, null),
-                  document.getElementById('main-wrap')
+                  React.createElement(PageOne, {data: data}),
+                  document.getElementById('main-wrap-1')
                 );
             }
         },
@@ -233,7 +330,7 @@ var view = (function () {
         		});
         		ReactDOM.render(
         			React.createElement(PageTwo, null),
-        			document.getElementById('main-wrap')
+        			document.getElementById('main-wrap-2')
         		);
         	}
         },
@@ -249,7 +346,7 @@ var view = (function () {
         		});
         		ReactDOM.render(
         			React.createElement(PageThree, null),
-        			document.getElementById('main-wrap')
+        			document.getElementById('main-wrap-3')
         		);
         	}
         },
@@ -265,7 +362,7 @@ var view = (function () {
         		});
         		ReactDOM.render(
         			React.createElement(PageFour, null),
-        			document.getElementById('main-wrap')
+        			document.getElementById('main-wrap-4')
         		);
         	}
         },
