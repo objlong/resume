@@ -320,10 +320,41 @@ var view = (function () {
         },
         page_two: {
         	render: function () {
+        		var Line = React.createClass({
+        			render: function () {
+        				return (
+        					<div className="line">
+        					</div>
+        				);
+        			}
+        		});
+        		var SubNavName = React.createClass({
+        			render: function () {
+        				return (
+        					<div className="navname-2">
+        						<span>xxxx-xxxx</span>
+        						<span>职业特色</span>
+        						<strong className="triangle"></strong>
+        					</div>        					
+        				);
+        			}
+        		});
+        		var SubNav_2 = React.createClass({
+        			render: function () {
+        				return (
+        					<div className="subnav-2">
+							<Line />
+							<SubNavName />
+							<Line />
+							</div> 
+        				);
+        			}
+        		});
         		var PageTwo = React.createClass({
         			render: function () {
         				return (
         					<div className="page-2">
+        						<SubNav_2 />
         					</div>
         				);
         			}

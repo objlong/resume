@@ -320,10 +320,41 @@ var view = (function () {
         },
         page_two: {
         	render: function () {
+        		var Line = React.createClass({displayName: "Line",
+        			render: function () {
+        				return (
+        					React.createElement("div", {className: "line"}
+        					)
+        				);
+        			}
+        		});
+        		var SubNavName = React.createClass({displayName: "SubNavName",
+        			render: function () {
+        				return (
+        					React.createElement("div", {className: "navname-2"}, 
+        						React.createElement("span", null, "xxxx-xxxx"), 
+        						React.createElement("span", null, "职业特色"), 
+        						React.createElement("strong", {className: "triangle"})
+        					)        					
+        				);
+        			}
+        		});
+        		var SubNav_2 = React.createClass({displayName: "SubNav_2",
+        			render: function () {
+        				return (
+        					React.createElement("div", {className: "subnav-2"}, 
+							React.createElement(Line, null), 
+							React.createElement(SubNavName, null), 
+							React.createElement(Line, null)
+							) 
+        				);
+        			}
+        		});
         		var PageTwo = React.createClass({displayName: "PageTwo",
         			render: function () {
         				return (
-        					React.createElement("div", {className: "page-2"}
+        					React.createElement("div", {className: "page-2"}, 
+        						React.createElement(SubNav_2, null)
         					)
         				);
         			}

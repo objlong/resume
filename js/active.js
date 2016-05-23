@@ -8,6 +8,11 @@ var controller = {
 	},
 	pageBreak: function (self) {
 		var n = self.data('id');
+		if (n != 0) {
+			$('#menu').css('height', 'auto');
+		} else {
+			$('#menu').css('height', '100%');
+		}
 		$('.item').removeClass('active');
 		self.addClass('active');
 		$('.main-wrap').hide();
@@ -18,4 +23,6 @@ controller.init();
 $(document).on('click', '.item', function () {
 	var self = $(this);
 	controller.pageBreak(self);
+}).on('click', '.triangle', function () {
+	$(this).addClass('triangle-2');
 })

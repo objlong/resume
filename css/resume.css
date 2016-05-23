@@ -41,7 +41,17 @@ body{background-color: #A2E2C7;}
 .page-1 .all-options{overflow: hidden;width: 90%;margin: 0 auto;}
 .page-1 .all-options .option-1{width: 50%;font-size: 1rem;line-height: 2rem;float: left;}
 .page-1 .all-options .option-1 span:nth-child(1){padding-left: 1.125rem;}
+/*pageTwo*/
 #main-wrap-2 {display: none;}
+.page-2{margin-top: 4.5rem;}
+.page-2 .subnav-2{padding: .625rem;}
+.page-2 .subnav-2 .line{background-color: #fff;height: .125rem;box-shadow: 0 0 10px 2px #FDFFFD;}
+.page-2 .subnav-2 .navname-2{overflow: hidden;position: relative;}
+.page-2 .subnav-2 .navname-2 span{float: left;font-size: .9375rem;line-height: 2rem;color: #fff;}
+.page-2 .subnav-2 .navname-2 span:nth-child(1){width: 50%;}
+.page-2 .subnav-2 .navname-2 span:nth-child(2){width: 50%;text-align: right;}
+.page-2 .subnav-2 .navname-2 .triangle{position: absolute;right: 0;left:0;top: 0;bottom: 0;margin: auto;border-top: .5rem solid transparent;border-left: .8rem solid #fff;border-right: 0 solid transparent;border-bottom: .5rem solid transparent;height: 0;width: 0;}
+.page-2 .subnav-2 .navname-2 .triangle-2{border-top: .8rem solid #fff;border-left: .5rem solid transparent;border-right: .5rem solid transparent;border-bottom: 0rem solid transparent;}
 #main-wrap-3 {display: none;}
 #main-wrap-4 {display: none;}
 .page-2{position: fixed;height: 100%;width: 100%;}
