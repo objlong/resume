@@ -24,5 +24,5 @@ $(document).on('click', '.item', function () {
 	var self = $(this);
 	controller.pageBreak(self);
 }).on('click', '.triangle', function () {
-	$(this).addClass('triangle-2');
+	$(this).toggleClass('triangle-2');
 })

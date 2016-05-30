@@ -367,10 +367,30 @@ var view = (function () {
         },
         page_three: {
         	render: function () {
+        		var Progress = React.createClass({displayName: "Progress",
+        			render: function () {
+        				return (
+        					React.createElement("div", {className: "pro-box"}, 
+        						React.createElement("div", {className: "percen"}, 
+        							"70%"
+        						), 
+        						React.createElement("div", {className: "half-box left-box"}, 
+        							React.createElement("div", null
+        							)
+        						), 
+        						React.createElement("div", {className: "half-box right-box"}, 
+        							React.createElement("div", null
+        							)
+        						)
+        					)
+        				);
+        			}
+        		});
         		var PageThree = React.createClass({displayName: "PageThree",
         			render: function () {
         				return (
-        					React.createElement("div", {className: "page-3"}
+        					React.createElement("div", {className: "page-3"}, 
+        						React.createElement(Progress, null)
         					)
         				);
         			}

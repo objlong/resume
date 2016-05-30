@@ -367,10 +367,30 @@ var view = (function () {
         },
         page_three: {
         	render: function () {
+        		var Progress = React.createClass({
+        			render: function () {
+        				return (
+        					<div className="pro-box">
+        						<div className="percen">
+        							70%
+        						</div>
+        						<div className="half-box left-box">
+        							<div>
+        							</div>
+        						</div>
+        						<div className="half-box right-box">
+        							<div>
+        							</div>
+        						</div>
+        					</div>
+        				);
+        			}
+        		});
         		var PageThree = React.createClass({
         			render: function () {
         				return (
         					<div className="page-3">
+        						<Progress />
         					</div>
         				);
         			}

@@ -52,10 +52,17 @@ body{background-color: #A2E2C7;}
 .page-2 .subnav-2 .navname-2 span:nth-child(2){width: 50%;text-align: right;}
 .page-2 .subnav-2 .navname-2 .triangle{position: absolute;right: 0;left:0;top: 0;bottom: 0;margin: auto;border-top: .5rem solid transparent;border-left: .8rem solid #fff;border-right: 0 solid transparent;border-bottom: .5rem solid transparent;height: 0;width: 0;}
 .page-2 .subnav-2 .navname-2 .triangle-2{border-top: .8rem solid #fff;border-left: .5rem solid transparent;border-right: .5rem solid transparent;border-bottom: 0rem solid transparent;}
+/*pageThree*/
 #main-wrap-3 {display: none;}
+.page-3{margin-top: 4.5rem;}
+.page-3 .pro-box{width: 4rem;height: 4rem;overflow: hidden;position: relative;color: #fff;}
+.page-3 .pro-box .percen{position: absolute;left: 0;top: 0; width: 3.5rem;height: 3.5rem;border: .25rem solid #dddddd;border-radius: 50%;line-height: 3.5rem;font-size: .9375rem;text-align: center;}
+.page-3 .pro-box .half-box{overflow: hidden;width: 2rem;height: 4rem;float: left;position: relative;}
+.page-3 .pro-box .left-box .act{animation: ro-1 5s infinite; position: absolute;top: 0;left: 0; width: 3.5rem;height: 3.5rem;border: .25rem solid #fff;border-bottom: .25rem solid transparent;border-right: .25rem solid transparent; border-radius: 50%;transform: rotate(135deg);}
+.page-3 .pro-box .right-box .act{animation: ro-2 5s infinite;position: absolute;top: 0;right: 0; width: 3.5rem;height: 3.5rem;border: .25rem solid #fff;border-bottom: .25rem solid transparent;border-right: .25rem solid transparent; border-radius: 50%;transform: rotate(-45deg);}
+
+
 #main-wrap-4 {display: none;}
-.page-2{position: fixed;height: 100%;width: 100%;}
-.page-3{position: fixed;height: 100%;width: 100%;background-color: #000;}
 .page-4{position: fixed;height: 100%;width: 100%;background-color: #ffa000;}
 
 .active{background-color: #D7ECF1! important;color: #fff;}
@@ -79,4 +86,15 @@ body{background-color: #A2E2C7;}
 @keyframes spread-4{
 	from{right: 0;bottom: 0;}
 	to{right: 1.5rem;bottom: 4.5rem;}
+@keyframes ro-1{
+	0%,50%{transform: rotate(135deg);}
+	100%{transform: rotate(225deg);}
+}
+@keyframes ro-2{
+	0%{transform: rotate(-45deg);}
+	50%, 100%{transform: rotate(135deg);}
+}
+
+
+
 
